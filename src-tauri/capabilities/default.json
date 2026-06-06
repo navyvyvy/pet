@@ -1,0 +1,7 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "PetPlayer windows can open user-selected PNG files and use app-specific storage.",
+  "windows": ["pet-bar", "settings"],
+  "permissions": ["core:default", "dialog:allow-open", "fs:default"]
+}

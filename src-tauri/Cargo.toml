@@ -1,0 +1,23 @@
+[package]
+name = "petplayer"
+version = "0.1.0"
+description = "A generic desktop pixel pet player."
+authors = ["PetPlayer"]
+edition = "2021"
+
+[lib]
+name = "petplayer_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+base64 = "0.22"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tauri = { version = "2", features = ["tray-icon", "image-png"] }
+tauri-plugin-dialog = "2"
+tauri-plugin-fs = "2"
+thiserror = "2"
+windows = { version = "0.61", features = ["Win32_Foundation", "Win32_Graphics_Gdi"] }
