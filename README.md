@@ -152,7 +152,15 @@ It runs on:
 - Manual runs from the GitHub Actions tab
 - Tags that start with `v`
 
-The workflow builds `src-tauri/target/release/petplayer.exe` and uploads it as a GitHub Actions artifact named `petplayer-windows`.
+The workflow builds:
+
+- Windows: `src-tauri/target/release/petplayer.exe`
+- macOS: a universal `.dmg` for Intel and Apple Silicon Macs
+
+Artifacts are uploaded as:
+
+- `petplayer-windows`
+- `petplayer-macos`
 
 To publish a GitHub Release automatically, push a version tag:
 
@@ -161,7 +169,9 @@ git tag v0.1.0
 git push origin v0.1.0
 ```
 
-Tag builds attach `petplayer.exe` to the GitHub Release.
+Tag builds attach the Windows `.exe` and macOS `.dmg` to the GitHub Release.
+
+The macOS build is not Apple notarized. macOS may show a Gatekeeper warning the first time it is opened.
 
 ## Scripts
 
