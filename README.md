@@ -155,7 +155,7 @@ It runs on:
 The workflow builds:
 
 - Windows: `src-tauri/target/release/petplayer.exe`
-- macOS: a universal `.dmg` for Intel and Apple Silicon Macs
+- macOS: an Apple Silicon `.dmg`
 
 Artifacts are uploaded as:
 
