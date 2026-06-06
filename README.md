@@ -137,6 +137,32 @@ If `origin` already exists:
 git remote set-url origin https://github.com/navyvyvy/pet.git
 ```
 
+## GitHub Actions
+
+The repository includes a Windows build workflow at:
+
+```text
+.github/workflows/build.yml
+```
+
+It runs on:
+
+- Pushes to `main`
+- Pull requests into `main`
+- Manual runs from the GitHub Actions tab
+- Tags that start with `v`
+
+The workflow builds `src-tauri/target/release/petplayer.exe` and uploads it as a GitHub Actions artifact named `petplayer-windows`.
+
+To publish a GitHub Release automatically, push a version tag:
+
+```bash
+git tag v0.1.0
+git push origin v0.1.0
+```
+
+Tag builds attach `petplayer.exe` to the GitHub Release.
+
 ## Scripts
 
 ```bash
